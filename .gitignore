@@ -24,7 +24,6 @@ logs
 
 # Yarn V2
 .yarn/*
-!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
