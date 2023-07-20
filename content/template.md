@@ -6,11 +6,16 @@ publishedAt: '2023-07-19'
 ---
 
 # Example writeup
-Why would i fucking read this?
-## Subtitle
-This subtitle is huge
+## Scanning the system
+```bash
+sudo nmap -sS -sV -p- -oN nmap.initial HOSTNAME
+```
+Results:
+```
+
+```
+## Enumerating x
 ### Subtitle
-#### Subtitle
 
 ```bash
 john --wordlist=/opt/wordlists/rockyou.txt hash
@@ -22,25 +27,4 @@ export default () => {
 }
 ```
 
-```ts [app.config.ts]
-export default defineAppConfig({
-  socials: {
-    twitter: 'Atinux',
-    github: 'Atinux/content-wind'
-  }
-})
-```
-
 You can simply do: `const codeInline: string = 'highlighted code inline'`{lang="ts"}
-
-```csharp
-private void index(){
-  MessageBox.Show("hello world");
-}
-``` 
-
-```ruby
-def index
-  puts "hello world"
-end
-``` 
