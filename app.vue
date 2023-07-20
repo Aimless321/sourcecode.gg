@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen overflow-hidden bg-white dark:bg-gray-900 relative isolate">
-    <div class="fixed h-screen w-screen top-0">
+    <div class="fixed h-screen w-screen top-0 -z-10">
       <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
         <div
             class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 dark:opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto px-3 lg:px-0">
       <!-- Title thing -->
       <div class="py-12">
         <NuxtLink to="/">

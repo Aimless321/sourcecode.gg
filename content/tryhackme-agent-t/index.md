@@ -1,6 +1,6 @@
 ---
 title: 'Tryhackme - Agent T Writeup'
-description: 'Agent T uncovered this website, which looks innocent enough, but something seems off about how the server responds...\n\nAfter deploying the vulnerable machine attached to this task, please wait a couple of minutes for it to respond.' 
+description: 'Agent T uncovered this website, which looks innocent enough, but something seems off about how the server responds...' 
 publishedAt: '2023-07-20'
 ---
 
@@ -30,6 +30,7 @@ Nmap done: 1 IP address (1 host up) scanned in 45.08 seconds
 Based on the nmap report this doesn't seem to be a standard web server like Apache or Nginx, but a PHP webserver. I never heard of a PHP cli server myself, so i first googled what it is. Seems like its just a webserver that is built-in in php intended for testing while developing an application. It's not intended to be used on a public network.
 
 ### Manual enumeration
+:article-img{src="/tryhackme-agent-t/dashboard.png"}
 On the website there seems to be some sort of admin dashboard. By clicking on most links it's pretty clear that it's just template and not an actual functional website. Most links aren't working at all.
 
 I checked if there was a sitemap or robots.txt present, but couldn't find one.

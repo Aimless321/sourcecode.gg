@@ -1,6 +1,6 @@
 ---
 title: 'Tryhackme - Mustaccio Writeup'
-description: 'The description of the blog' 
+description: 'Deploy and compromise the machine!' 
 publishedAt: '2023-07-20'
 ---
 
@@ -46,6 +46,7 @@ gobuster dir -u http://mustacchio.thm -w /opt/wordlists/dirbuster/directory-list
 
 ## Enumerating nginx
 ### Manual enumeration
+:article-img{src="/tryhackme-mustacchio/admin-panel.png"}
 On the home page we're greeted by a admin panel with a login form. It's asking us for a username and password. I looked through the source of the page to check if there was any credentials in there, but no easy win today.
 
 ### Bruteforcing directories
@@ -76,6 +77,7 @@ admin|1868e36a6d2b17d4c2745f1659433a54d4......
 The password looks like a hash so i quickly ran it through (crackstation)[https://crackstation.net/], this resulted in a password that allowed us to login into the admin panel.
 
 ## Exploiting the admin panel
+:article-img{src="/tryhackme-mustacchio/add-comment.png"}
 Inside the sourcecode of the admin panel there is the following comment which gives us a username to login to with SSH.
 ```html
 <!-- Barry, you can now SSH in using your key!-->
@@ -118,6 +120,8 @@ This was a success and we now have his (encrypted) private key.
 
 ## Getting into SSH
 We have a key and we know who it belongs to, so all we need is to find the password of the key. I tried the same password as for the admin panel but no luck there. Let's try to bruteforce it.
+
+
 I use this stupid workaround to get ssh2john working on my laptop and extract the hash.
 ```bash
 sed 's/decodestring/decodebytes/' /usr/bin/ssh2john | python - key > ssh-hash
